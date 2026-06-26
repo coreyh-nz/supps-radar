@@ -1,0 +1,11 @@
+### IntelliJ IDEA ###
+.idea/
+*.iml
+out/
+
+### Zed ###
+.zed/
+
+### OS-level ###
+.DS_Store
+Thumbs.db
