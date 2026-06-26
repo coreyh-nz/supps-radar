@@ -24,6 +24,9 @@ dependencies {
     // Logging
     implementation(libs.kotlin.logging)
 
+    // Internal Libraries
+    implementation(project(":libraries:common"))
+
     // Tests
     testImplementation(libs.spring.boot.starter.test)
 }
