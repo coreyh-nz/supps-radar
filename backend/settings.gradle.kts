@@ -10,3 +10,5 @@ plugins {
 }
 
 rootProject.name = "supps-radar-backend"
+
+include("services:crawler-service")
