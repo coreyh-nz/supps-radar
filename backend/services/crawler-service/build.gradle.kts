@@ -12,6 +12,15 @@ dependencies {
     // Spring
     implementation(libs.spring.boot.starter)
 
+    // Database
+    implementation(platform(libs.exposed.bom))
+    implementation(libs.exposed.core)
+    implementation(libs.exposed.jdbc)
+    implementation(libs.exposed.json)
+    implementation(libs.exposed.kotlin.datetime)
+    implementation(libs.exposed.spring.boot4.starter)
+    implementation(libs.postgresql)
+
     // Logging
     implementation(libs.kotlin.logging)
 
