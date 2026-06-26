@@ -26,6 +26,7 @@ dependencies {
 
     // Internal Libraries
     implementation(project(":libraries:common"))
+    implementation(project(":libraries:persistence"))
 
     // Tests
     testImplementation(libs.spring.boot.starter.test)
