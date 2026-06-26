@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: retailer-service
+
+  main:
+    banner-mode: off
+
+  datasource:
+    url: ${DATABASE_URL}
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}

@@ -15,3 +15,4 @@ include("services:crawler-service")
 
 include("libraries:common")
 include("libraries:persistence")
+include("services:retailer-service")
