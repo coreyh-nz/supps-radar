@@ -14,3 +14,4 @@ rootProject.name = "supps-radar-backend"
 include("services:crawler-service")
 
 include("libraries:common")
+include("libraries:persistence")
