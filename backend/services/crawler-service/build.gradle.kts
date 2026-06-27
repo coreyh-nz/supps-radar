@@ -11,6 +11,11 @@ dependencies {
 
     // Spring
     implementation(libs.spring.boot.starter)
+    implementation(libs.spring.boot.starter.json)
+    implementation(libs.spring.boot.starter.kafka)
+
+    // Jackson
+    implementation(libs.jackson.module.kotlin)
 
     // Database
     implementation(platform(libs.exposed.bom))
