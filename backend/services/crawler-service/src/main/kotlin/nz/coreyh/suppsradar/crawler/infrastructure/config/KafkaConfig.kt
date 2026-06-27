@@ -1,5 +1,6 @@
 package nz.coreyh.suppsradar.crawler.infrastructure.config
 
+import nz.coreyh.suppsradar.events.v1.retailer.RetailerEvent
 import org.apache.kafka.common.serialization.StringDeserializer
 import org.apache.kafka.common.serialization.StringSerializer
 import org.springframework.boot.kafka.autoconfigure.KafkaProperties
@@ -38,7 +39,10 @@ class KafkaConfig(
      */
     @Bean
     fun consumerFactory(): ConsumerFactory<String, Any> {
-        val deserializer = JacksonJsonDeserializer<Any>(jsonMapper)
+        val deserializer =
+            JacksonJsonDeserializer<Any>(jsonMapper).apply {
+                addTrustedPackages(RetailerEvent::class.java.packageName)
+            }
         return DefaultKafkaConsumerFactory(
             kafkaProperties.buildConsumerProperties(),
             StringDeserializer(),
