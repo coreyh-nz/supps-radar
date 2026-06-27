@@ -27,6 +27,7 @@ dependencies {
     // Internal Libraries
     implementation(project(":libraries:common"))
     implementation(project(":libraries:persistence"))
+    implementation(project(":libraries:event-contracts"))
 
     // Tests
     testImplementation(libs.spring.boot.starter.test)
