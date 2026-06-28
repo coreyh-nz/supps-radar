@@ -20,3 +20,9 @@ logging:
   level:
     org.apache.kafka: WARN
     org.springframework.kafka: WARN
+
+crawl:
+  executor:
+    max-concurrent-batches: 1
+    default-worker-job-limit: 1
+    scheduler-interval: 5s

@@ -10,9 +10,9 @@ import org.springframework.stereotype.Component
 
 @Component
 class CrawlWorkerRegistryImpl(
-    workers: List<CrawlWorker<*, *>>,
+    workers: List<CrawlWorker<out CrawlJobMetadata, out CrawlJobResult>>,
 ) : CrawlWorkerRegistry {
-    private val registry: Map<CrawlPlatformType, CrawlWorker<*, *>> =
+    private val registry: Map<CrawlPlatformType, CrawlWorker<out CrawlJobMetadata, out CrawlJobResult>> =
         workers.associateBy { it.retailerType }
 
     @Suppress("UNCHECKED_CAST")
@@ -24,4 +24,6 @@ class CrawlWorkerRegistryImpl(
     ): CrawlWorker<M, R> =
         registry[retailerType] as? CrawlWorker<M, R>
             ?: throw CrawlWorkerNotFoundException(retailerType)
+
+    override fun allWorkers(): Collection<CrawlWorker<out CrawlJobMetadata, out CrawlJobResult>> = registry.values
 }

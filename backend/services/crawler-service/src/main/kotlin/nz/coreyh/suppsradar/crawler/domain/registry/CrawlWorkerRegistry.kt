@@ -17,4 +17,6 @@ interface CrawlWorkerRegistry {
      *    type.
      */
     fun <M : CrawlJobMetadata, R : CrawlJobResult> getWorker(retailerType: CrawlPlatformType): CrawlWorker<M, R>
+
+    fun allWorkers(): Collection<CrawlWorker<out CrawlJobMetadata, out CrawlJobResult>>
 }

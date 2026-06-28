@@ -11,6 +11,7 @@ dependencies {
 
     // Spring
     implementation(libs.spring.boot.starter)
+    implementation(libs.spring.boot.starter.webflux)
     implementation(libs.spring.boot.starter.json)
     implementation(libs.spring.boot.starter.kafka)
 
